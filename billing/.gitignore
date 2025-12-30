@@ -1,0 +1,72 @@
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+*.key
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# =========================
+# Virtual Environment
+# =========================
+venv/
+env/
+.venv/
+
+# =========================
+# Django
+# =========================
+*.log
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Django migrations (optional)
+# Uncomment if you don’t want migrations tracked
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# =========================
+# Celery
+# =========================
+celerybeat-schedule
+celerybeat.pid
+
+# =========================
+# Redis / Cache
+# =========================
+dump.rdb
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Editor / IDE
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# =========================
+# PDF / Generated Files
+# =========================
+*.pdf

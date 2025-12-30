@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div style="border:1px solid #000;padding:20px;">
+  <h3 style="text-align:center;">Billing Invoice</h3>
+
+  <p><strong>Customer Email:</strong> {{ bill.customer.email }}</p>
+
+  <table border="1" width="100%" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Product ID</th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Tax %</th>
+      <th>Total</th>
+    </tr>
+
+    {% for item in bill.billitem_set.all %}
+    <tr align="center">
+      <td>{{ item.product.product_id }}</td>
+      <td>{{ item.product.unit_price }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.product.tax_percentage }}%</td>
+      <td>{{ item.total_price }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p><strong>Total Price:</strong> {{ bill.total_price }}</p>
+  <p><strong>Total Tax:</strong> {{ bill.total_tax }}</p>
+  <p><strong>Net Price:</strong> {{ bill.net_price }}</p>
+  <p><strong>Paid Amount:</strong> {{ bill.paid_amount }}</p>
+  <p><strong>Balance:</strong> {{ bill.balance_amount }}</p>
+
+  <hr>
+
+  <h4>Balance Denomination</h4>
+  {% for d in balance_denoms %}
+    <p>{{ d.value }} : {{ d.count }}</p>
+  {% endfor %}
+</div>
+
+</body>
+</html>
