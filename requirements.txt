@@ -1,0 +1,19 @@
+Django>=4.2,<5.0
+
+# Celery & Redis
+celery>=5.3
+redis>=5.0
+django-celery-results>=2.5
+
+# Environment variables
+python-dotenv>=1.0
+
+# PDF generation
+xhtml2pdf>=0.2.11
+
+# Email (comes with Django, listed for clarity)
+# django.core.mail (built-in)
+
+# Utilities
+pytz
+sqlparse
